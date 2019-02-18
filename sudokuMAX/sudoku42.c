@@ -94,7 +94,7 @@ static int	ft_board_ok(char **tab, int x, int y, int *nsol)
 	if (x == 9)
 	{
 		if (*nsol < 0)
-		ft_print_board(tab);
+			ft_print_board(tab);
 		return (++(*nsol));
 	}
 	if (tab[x][y] != '.')
@@ -119,11 +119,11 @@ int			main(int argc, char **argv)
 	nsol = 0;
 	if (argc == 10 && !ft_board_error(tab))
 	{
-		ft_board_ok( tab, 0, 0, &nsol);
+		ft_board_ok(tab, 0, 0, &nsol);
 		if (nsol == 1)
 		{
 			nsol = -1;
-			ft_board_ok( tab, 0, 0, &nsol);
+			ft_board_ok(tab, 0, 0, &nsol);
 		}
 		else
 			write(1, "Error\n", 6);
