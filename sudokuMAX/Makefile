@@ -14,21 +14,14 @@ NAME=sudoku_solver
 
 SRCS= sudoku42.c
 
-SRCDIR = 
+OBJ= sudoku42.o
 
-OBJ= $(SRCS:.c=.o)
-SRCSDIR = $(addprefix $(SRCDIR), $(SRCS))
-
-INCLUDES= -I ./inc
 CFLAGS = -c -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 		gcc -o $@ $(OBJ)
-
-$(OBJ): $(SRCSDIR)
-	gcc $(CFLAGS) $^ $(INCLUDES)
 
 clean:
 	rm -f $(OBJ)
