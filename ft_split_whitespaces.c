@@ -24,6 +24,8 @@ int		ft_nbw(char *s)
 
 	nbw = 0;
 	i = 0;
+	if (!s)
+		return (0);
 	while (s[i])
 	{
 		while (s[i] && ft_white(s[i]))
@@ -47,7 +49,7 @@ char	*ft_w_str(char *s)
 	if (s && (!(ws = (char *)malloc(sizeof(char) * (i + 1)))))
 		return ((char*)0);
 	i = -1;
-	while (!ft_white(s[++i]))
+	while (s[++i] && !ft_white(s[i]))
 		ws[i] = s[i];
 	ws[i] = '\0';
 	return (ws);
